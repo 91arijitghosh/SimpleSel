@@ -17,6 +17,9 @@ public class OpenGoogle
         driver.manage().deleteAllCookies();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("https://www.google.com");
+        System.out.println(driver.getTitle());
+
+        driver.quit();
 
     }
 }
