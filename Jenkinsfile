@@ -2,6 +2,10 @@ pipeline{
   
   agent any
   
+  environment{
+   PATH=$PATH:$MAVEN_HOME/bin 
+  }
+  
   stages{
     stage('Build')
     {
