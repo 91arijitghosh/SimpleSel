@@ -14,7 +14,7 @@ pipeline{
       steps{
         sh'''#!/bin/bash
         echo "This is testing Stage"
-         
+        mvn clean test 
         '''
       }
     }  
