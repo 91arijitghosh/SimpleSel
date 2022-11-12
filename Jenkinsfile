@@ -3,7 +3,7 @@ pipeline{
   agent any
   
   environment{
-   PATH=$PATH:$MAVEN_HOME/bin 
+   PATH="$PATH:$MAVEN_HOME/bin" 
   }
   
   stages{
