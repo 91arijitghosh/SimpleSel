@@ -1,14 +1,28 @@
 pipeline{
+  
   agent any
+  
   stages{
-    stage('test')
+    stage('Build')
     {
       steps{
-        sh'''#!bin/bash
-        echo "Hello World"
-        mvn clean test
+        echo "This is building Stage"
+      }
+    }  
+    stage('Test')
+    {
+      steps{
+        sh'''#!/bin/bash
+        echo "This is testing Stage"
+         
         '''
       }
-    }
+    }  
+    stage('Deploy')
+    {
+      steps{
+        echo "This is deployment Stage"
+      }
+    }  
   }
 }
