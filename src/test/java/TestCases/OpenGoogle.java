@@ -11,6 +11,7 @@ public class OpenGoogle
     @Test
     public void open_Google()
     {
+        //*
         System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"\\src\\main\\resources\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -20,6 +21,7 @@ public class OpenGoogle
         System.out.println(driver.getTitle());
 
         driver.quit();
-
+*//
+       System.out.println("This is a demo Maven Project");
     }
 }
