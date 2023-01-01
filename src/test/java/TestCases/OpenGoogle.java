@@ -24,7 +24,7 @@ public class OpenGoogle
         DesiredCapabilities cap = DesiredCapabilities.chrome();
         cap.setBrowserName("chrome");
         cap.setPlatform(Platform.WIN10);
-        System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"\\src\\main\\resources\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"\\src\\main\\resources\\chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("headless");
         options.merge(cap);
@@ -34,8 +34,7 @@ public class OpenGoogle
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("https://www.google.com");
         System.out.println("This is title"+driver.getTitle());
-
         driver.quit();
-
+        System.out.println("This is a demo Maven Project");
     }
 }
