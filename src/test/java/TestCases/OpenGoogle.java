@@ -26,14 +26,16 @@ public class OpenGoogle
         cap.setPlatform(Platform.WIN10);
         System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"\\src\\main\\resources\\chromedriver");
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("headless");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--headless");
         options.merge(cap);
         driver = new RemoteWebDriver(new URL(gridURL),options);
         //driver.manage().window().maximize();
         //driver.manage().deleteAllCookies();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("https://www.google.com");
-        System.out.println("This is title"+driver.getTitle());
+        System.out.println("This is title : "+driver.getTitle());
         driver.quit();
         System.out.println("This is a demo Maven Project");
     }
