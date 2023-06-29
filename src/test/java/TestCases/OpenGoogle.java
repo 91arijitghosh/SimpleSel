@@ -29,8 +29,8 @@ public class OpenGoogle
         options.merge(cap);
         
         WebDriver driver = new ChromeDriver(options);
-        driver.manage().window().maximize();
-        driver.manage().deleteAllCookies();
+        //driver.manage().window().maximize();
+        //driver.manage().deleteAllCookies();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("https://www.google.com");
         System.out.println(driver.getTitle());
