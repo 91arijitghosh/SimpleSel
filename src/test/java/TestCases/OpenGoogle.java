@@ -1,5 +1,9 @@
 package TestCases;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -14,6 +18,11 @@ public class OpenGoogle
     @Test
     public void open_Google()
     {
+
+        ExtentHtmlReporter reporter = new ExtentHtmlReporter(System.getProperty("user.dir")+"/Reports/extent.html");
+        ExtentReports reports = new ExtentReports();
+        ExtentTest test = reports.createTest("Google Title Check");
+
         DesiredCapabilities cap = DesiredCapabilities.chrome();
         cap.setBrowserName("chrome");
         cap.setPlatform(Platform.LINUX);
@@ -34,6 +43,8 @@ public class OpenGoogle
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("https://www.google.com");
         System.out.println(driver.getTitle());
+        test.log(Status.PASS,driver.getTitle());
+        reports.flush();
 
         driver.quit();
 
